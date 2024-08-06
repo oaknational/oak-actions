@@ -1,0 +1,31 @@
+name: Common Terraform Checks
+run-name: 🔍 Terraform Checks - triggered by @${{ github.actor }}
+on: [push]
+jobs:
+  terraform-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.7 # See upgrading docs regarding tfenv: https://www.notion.so/oaknationalacademy/Terraform-The-Oak-Guide-to-b3930c13433f48fa890968636f495098?pvs=4#4dee54a2e4714f55957b047c1d94c62a
+      - name: "INFO: Acertain Terraform Version"
+        shell: bash
+        run: terraform --version
+      - name: "INFO: Linting Terraform Files"
+        shell: bash
+        run: |
+          cd infrastructure
+          terraform fmt -check $(find . -name '*tf')
+      - name: "INFO: Validate terraform configs"
+        shell: bash
+        run: |
+          cd infrastructure
+          for d in $(find . -type d -mindepth 1 -maxdepth 1)
+          do
+            echo "Validating the $d config"
+            cd $d
+            terraform init -backend=false
+            terraform validate
+            cd ..
+          done
