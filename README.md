@@ -8,7 +8,6 @@ The `actions` folder is designed to house reusable GitHub Actions, making it eas
 actions/
 ├── terraform/
 │   ├── action.yml
-│   ├── Dockerfile (if applicable)
 │   ├── scripts/ (if any)
 │   └── README.md
 ```
