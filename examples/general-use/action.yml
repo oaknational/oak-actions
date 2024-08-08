@@ -1,0 +1,13 @@
+name: Terraform Check
+
+on: [push, pull_request]
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Terraform Action from oak-terraform-actions
+        uses: oaknational/oak-actions/actions/terraform@main
+        with:
+          example_input: "value"

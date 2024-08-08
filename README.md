@@ -12,7 +12,7 @@ actions/
 │   └── README.md
 ```
 
-### Terraform Action 🌍
+### Terraform Actions 🌍
 
 **Location:** `actions/terraform`
 
@@ -27,18 +27,17 @@ actions/
 ### How to Use
 
 ```yaml
-jobs:
-  terraform-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Run Terraform Action
-        uses: oaknational/oak-actions/actions/terraform@main
-        with:
-          example_input: "value"
-```
+name: Terraform Check
 
-> **Note:** Replace `example_input` with the required parameters as specified in the action's `README.md`.
+on: [push, pull_request]
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Terraform Action from oak-terraform-actions
+        uses: oaknational/oak-actions/actions/terraform@main
+```
 
 For more details, visit the [oaknational/oak-actions repository](https://github.com/oaknational/oak-actions).
