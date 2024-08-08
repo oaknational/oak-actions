@@ -9,11 +9,40 @@ runs:
       with:
         terraform_version: ${{ inputs.terraform_version }}
 
+    - name: Cache plugin dir
+      uses: actions/cache@v4
+      with:
+        path: ~/.tflint.d/plugins
+        key: tflint-${{ hashFiles('.tflint.hcl') }}
+
+    - name: "INFO: Setup TFLint"
+      uses: terraform-linters/setup-tflint@v4
+      with:
+        tflint_version: v0.50.3
+
+    - name: "INFO: Show version"
+      shell: bash
+      run: tflint --version
+
+    - name: "INFO:  Init TFLint"
+      shell: bash
+      run: tflint --init
+
+    - name: "INFO:  Run TFLint"
+      shell: bash
+      run: tflint -f compact
+
     - name: "INFO: Ascertain Terraform Version"
       shell: bash
       run: terraform --version
 
     - name: "INFO: Linting Terraform Files"
+      shell: bash
+      run: |
+        cd infrastructure
+        terraform fmt -check $(find . -name '*tf')
+
+    - name: "INFO: Checking Terraform Format of Files"
       shell: bash
       run: |
         cd infrastructure
