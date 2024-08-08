@@ -1,6 +1,6 @@
+---
 name: "Terraform Checks"
 description: "Perform common Terraform checks"
-
 runs:
   using: "composite"
   steps:
