@@ -1,13 +1,13 @@
-### Contributing to Oak Actions
+### Contributing to Oak Terraform Actions
 
-Thank you for your interest in contributing to the Oak Actions repository! We welcome and appreciate your contributions. Here’s how you can get started:
+Thank you for your interest in contributing to the Oak Terrafor Actions repository! We welcome and appreciate your contributions. Here’s how you can get started:
 
 ## How to Contribute
 
 1. **Fork the Repository**: Click on the fork button to create your copy of the repository.
 2. **Clone Your Fork**: Clone the forked repository to your local machine.
    ```bash
-   git clone https://github.com/your-username/oak-actions.git
+   git clone https://github.com/your-username/oak-terraform-actions.git
    ```
 3. **Create a Branch**: Create a new branch for your feature or bug fix.
    ```bash
@@ -44,7 +44,7 @@ When submitting a pull request, you will be presented with our Pull Request Temp
 
 ## Code of Conduct
 
-Please adhere to the [Code of Conduct](https://github.com/oaknational/oak-actions/blob/main/CODE_OF_CONDUCT.md) to ensure a welcoming and respectful environment for all contributors.
+Please adhere to the [Code of Conduct](https://github.com/oaknational/oak-terraform-actions/blob/main/CODE_OF_CONDUCT.md) to ensure a welcoming and respectful environment for all contributors.
 
 ## Getting Help
 
@@ -54,4 +54,4 @@ If you need help, feel free to open an issue or ask for assistance in your pull 
 
 We appreciate your contributions and look forward to collaborating with you! 🚀
 
-For more details, visit the [Oak Actions repository](https://github.com/oaknational/oak-actions).
+For more details, visit the [Oak Terraform Actions repository](https://github.com/oaknational/oak-terraform-actions).

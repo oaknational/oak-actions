@@ -1,4 +1,4 @@
-# oak-actions
+# oak-terraform-actions
 
 The `actions` folder is designed to house reusable GitHub Actions, making it easy to manage and share automation across different repositories. Each subfolder within `actions` contains a specific action with all necessary files and documentation.
 
@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - name: Run Terraform Action from oak-terraform-actions
-        uses: oaknational/oak-actions/actions/terraform@main
+        uses: oaknational/oak-terraform-actions/actions/terraform@main
 ```
 
-For more details, visit the [oaknational/oak-actions repository](https://github.com/oaknational/oak-actions).
+For more details, visit the [Oak Terraform Actions repository](https://github.com/oaknational/oak-terraform-actions).
