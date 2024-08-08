@@ -1,0 +1,27 @@
+{
+  "name": "oak-terraform-actions",
+  "version": "1.0.0",
+  "description": "The `actions` folder is designed to house reusable GitHub Actions for **Terraform**, making it easy to manage and share automation across different repositories. See the Example folder to get started.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "cc": "commit",
+    "commitlint-last": "echo \"$(git log -1 --pretty=format:'%s')\" | commitlint --verbose",
+    "lint": "npm run lint:check-yamllint && npm run lint:yaml",
+    "lint:yaml": "command -v yamllint >/dev/null 2>&1 && yamllint actions/",
+    "lint:check-yamllint": "command -v yamllint >/dev/null 2>&1 && echo '🎉 PASS: yamllint is installed.' || echo '😭 ERROR: yamllint is not installed. Please install it using \\\"pip install yamllint\\\".'",
+    "prepare": "husky",
+    "resource-count-compare": "ts-node src/resource-count-compare",
+    "test": "jest --watch --collectCoverage=false",
+    "test:ci": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commitlint": "^19.4.0",
+    "husky": "^9.1.4"
+  }
+}
