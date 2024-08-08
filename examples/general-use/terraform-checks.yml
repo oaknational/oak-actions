@@ -1,0 +1,14 @@
+# Example Github Workflow file to run Terraform Check action
+name: Terraform Checks
+
+on: [push, pull_request]
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run Terraform Action from oak-terraform-actions
+        uses: oaknational/oak-terrform-actions/actions/terraform-checks@main

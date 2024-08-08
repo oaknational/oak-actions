@@ -1,18 +1,11 @@
 name: "Terraform Checks"
 description: "Perform common Terraform checks"
-inputs:
-  terraform_version:
-    description: "Terraform version to use"
-    required: false
-    default: "1.5.7"
+
 runs:
   using: "composite"
   steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v2
+      uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: ${{ inputs.terraform_version }}
 

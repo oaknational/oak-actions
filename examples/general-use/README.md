@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run Terraform Action from oak-terraform-actions
         uses: oaknational/oak-terraform-actions/actions/terraform@main

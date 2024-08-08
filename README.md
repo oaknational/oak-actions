@@ -1,12 +1,12 @@
 # oak-terraform-actions
 
-The `actions` folder is designed to house reusable GitHub Actions, making it easy to manage and share automation across different repositories. Each subfolder within `actions` contains a specific action with all necessary files and documentation.
+The `actions` folder is designed to house reusable GitHub Actions for **Terraform**, making it easy to manage and share automation across different repositories. See the Example folder to get started.
 
 #### Structure
 
 ```plaintext
 actions/
-├── terraform/
+├── terraform-checks/
 │   ├── action.yml
 │   ├── scripts/ (if any)
 │   └── README.md
@@ -14,20 +14,22 @@ actions/
 
 ### Terraform Actions 🌍
 
-**Location:** `actions/terraform`
+#### Terraform Checks
 
-**Purpose:** The Terraform action automates Terraform workflows, including applying infrastructure as code configurations.
+**Location:** `actions/terraform-checks`
+
+**Purpose:** The Terraform Github Action checks your code fits the Oak standards.
 
 #### Key Features
 
 - **Infrastructure Management:** Streamlines Terraform commands in CI/CD pipelines.
 - **Ease of Use:** Integrates seamlessly with your GitHub workflows.
-- **Customizable:** Accepts input parameters for flexible operation.
 
 ### How to Use
 
 ```yaml
-name: Terraform Check
+# Example Github Workflow file to run Terraform Check action
+name: Terraform Checks
 
 on: [push, pull_request]
 
@@ -36,8 +38,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Run Terraform Action from oak-terraform-actions
-        uses: oaknational/oak-terraform-actions/actions/terraform@main
+        uses: oaknational/oak-terrform-actions/actions/terraform-checks@main
 ```
 
 For more details, visit the [Oak Terraform Actions repository](https://github.com/oaknational/oak-terraform-actions).
