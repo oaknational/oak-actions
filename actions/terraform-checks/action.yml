@@ -20,7 +20,7 @@ runs:
       with:
         tflint_version: v0.52.0
 
-    - name: "INFO: Show version"
+    - name: "INFO: Print version of tflint"
       shell: bash
       run: tflint --version
 
