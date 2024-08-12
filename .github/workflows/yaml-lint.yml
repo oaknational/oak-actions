@@ -8,18 +8,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "INFO: Checkout repository"
+      - name: "Checkout repository"
         uses: actions/checkout@v4
 
-      - name: "INFO: Set up Python"
-        uses: actions/setup-python@v2
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: "INFO: Install yamllint"
+      - name: "Install yamllint"
         run: |
           python -m pip install --upgrade pip
           pip install yamllint
 
-      - name: "INFO: Run yamllint"
+      - name: "Run yamllint"
         run: yamllint .
