@@ -23,9 +23,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Terraform Action from oak-terraform-actions
-        uses: oaknational/oak-terraform-actions/actions/terraform@main
-        with:
-          example_input: "value"
+        uses: oaknational/oak-terraform-actions/actions/terraform-checks/action.yml@main
 ```
 
 ### Explanation

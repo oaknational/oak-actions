@@ -41,12 +41,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run Terraform Action from oak-terraform-actions
-        uses: oaknational/oak-terrform-actions/actions/terraform-checks@main
+        uses: oaknational/oak-terraform-actions/actions/terraform-checks/action.yml@main
 ```
 
 For more details, visit the [Oak Terraform Actions repository](https://github.com/oaknational/oak-terraform-actions).
 
-# commitlint
+# Commitlint
 
 We're using [husky](https://github.com/typicode/husky) to create pre-commit hooks with commitlint and the [conventional commit plugin](https://github.com/conventional-changelog/commitlint).
 
