@@ -46,6 +46,11 @@ jobs:
 
 For more details, visit the [Oak Terraform Actions repository](https://github.com/oaknational/oak-terraform-actions).
 
-# Commits
+# commitlint
 
-We're using (husky)[https://github.com/typicode/husky] to create pre-commit hooks with 
+We're using [husky](https://github.com/typicode/husky) to create pre-commit hooks with commitlint and the [conventional commit plugin](https://github.com/conventional-changelog/commitlint).
+
+```bash
+# Example commit that passes
+fix(docs): improving documentation
+```
