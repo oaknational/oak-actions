@@ -1,7 +1,6 @@
 ---
 name: "Terraform Checks"
 description: "Perform common Terraform checks"
-
 runs:
   using: "composite"
   steps:
@@ -10,17 +9,40 @@ runs:
       with:
         terraform_version: ${{ inputs.terraform_version }}
 
-    - name: "INFO: Ascertain Terraform Version"
+    - name: Cache plugin dir
+      uses: actions/cache@v4
+      with:
+        path: ~/.tflint.d/plugins
+        key: tflint-${{ hashFiles('.tflint.hcl') }}
+
+    - name: "Setup TFLint"
+      uses: terraform-linters/setup-tflint@v4
+      with:
+        tflint_version: v0.52.0
+
+    - name: "Print version of tflint"
+      shell: bash
+      run: tflint --version
+
+    - name: "Init TFLint"
+      shell: bash
+      run: tflint --init
+
+    - name: "Run TFLint"
+      shell: bash
+      run: tflint --chdir infrastructure/ --recursive
+
+    - name: "Ascertain Terraform Version"
       shell: bash
       run: terraform --version
 
-    - name: "INFO: Linting Terraform Files"
+    - name: "Checking Terraform Format of Files"
       shell: bash
       run: |
         cd infrastructure
         terraform fmt -check $(find . -name '*tf')
 
-    - name: "INFO: Validate Terraform Configs"
+    - name: "Validate Terraform Configs"
       shell: bash
       run: |
         cd infrastructure
