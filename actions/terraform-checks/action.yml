@@ -9,6 +9,15 @@ runs:
       with:
         terraform_version: ${{ inputs.terraform_version }}
 
+    - name: Check for .tflint.hcl file
+      run: |
+        if [ -f .tflint.hcl ]; then
+          echo "INFO: .tflint.hcl file found in the root directory."
+        else
+          echo "ERROR: .tflint.hcl file is missing. Please add it to the root of the repository. See the internal terraform docs"
+          exit 1
+        fi
+
     - name: Cache plugin dir
       uses: actions/cache@v4
       with:
