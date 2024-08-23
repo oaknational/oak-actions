@@ -10,6 +10,7 @@ runs:
         terraform_version: ${{ inputs.terraform_version }}
 
     - name: Check for .tflint.hcl file
+      shell: bash
       run: |
         if [ -f .tflint.hcl ]; then
           echo "INFO: .tflint.hcl file found in the root directory."
