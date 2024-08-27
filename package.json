@@ -15,7 +15,8 @@
     "prepare": "husky",
     "resource-count-compare": "ts-node src/resource-count-compare",
     "test": "jest --watch --collectCoverage=false",
-    "test:ci": "jest"
+    "test:ci": "jest",
+    "semantic-release": "semantic-release"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,10 @@
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "husky": "^9.1.4"
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "husky": "^9.1.4",
+    "semantic-release": "^24.1.0"
   }
 }
