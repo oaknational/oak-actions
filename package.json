@@ -13,24 +13,17 @@
     "lint:yaml": "command -v yamllint >/dev/null 2>&1 && yamllint actions/",
     "lint:check-yamllint": "command -v yamllint >/dev/null 2>&1 && echo '🎉 PASS: yamllint is installed.' || echo '😭 ERROR: yamllint is not installed. Please install it using \\\"pip install yamllint\\\".'",
     "prepare": "husky",
-    "resource-count-compare": "ts-node src/resource-count-compare",
-    "test": "jest --watch --collectCoverage=false",
-    "test:ci": "jest",
-    "semantic-release": "semantic-release"
+    "resource-count-compare": "ts-node src/resource-count-compare"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commitlint": "^19.4.0"
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
+    "commitlint": "^19.4.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.4.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/exec": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "husky": "^9.1.4",
-    "semantic-release": "^24.1.0"
+    "husky": "^9.1.4"
   }
 }
