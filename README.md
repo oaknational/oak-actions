@@ -28,7 +28,7 @@ actions/
 ### How to Use
 
 ```yaml
-# Example Github Workflow file to run Terraform Check action        # Example Github Workflow file to run Terraform Check action
+# Example Github Workflow file to run Terraform Check action
 name: Terraform Checks
 
 on: [push] # yamllint disable-line rule:truthy
