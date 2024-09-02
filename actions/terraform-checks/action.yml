@@ -1,6 +1,13 @@
 ---
 name: "Terraform Checks"
 description: "Perform common Terraform checks"
+
+# Can be overriden by the developer when using this action
+inputs:
+  terraform_version:
+    description: "The version of Terraform to use"
+    default: "1.94"
+
 runs:
   using: "composite"
   steps:

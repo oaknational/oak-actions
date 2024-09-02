@@ -31,20 +31,22 @@ actions/
 # Example Github Workflow file to run Terraform Check action
 name: Terraform Checks
 
-on: [push, pull_request]
+on: [push] # yamllint disable-line rule:truthy
 
 jobs:
-  example-job:
+  terraform-lint-format:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run Terraform Action from oak-terraform-actions
-        uses: oaknational/oak-terraform-actions/actions/terraform-checks/action.yml@main
+        uses: oaknational/oak-terraform-actions/actions/terraform-checks@main
 ```
 
 For more details, visit the [Oak Terraform Actions repository](https://github.com/oaknational/oak-terraform-actions).
+
+You can also define the version required if necessary. See the examples folder.
 
 # Commitlint
 
