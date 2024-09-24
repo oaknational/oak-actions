@@ -1,6 +1,11 @@
 ---
 name: "Terraform Checks"
 description: "Perform common Terraform checks"
+inputs:
+  terraform_base_dir:
+    description: Which base dir to search for the Terraform config(s) in
+    required: false
+    default: infrastructure
 runs:
   using: "composite"
   steps:
@@ -40,7 +45,7 @@ runs:
 
     - name: "Run TFLint"
       shell: bash
-      run: tflint --chdir infrastructure/ --recursive
+      run: tflint --chdir ${{ inputs.terraform_base_dir }}/ --recursive
 
     - name: "Ascertain Terraform Version"
       shell: bash
@@ -49,13 +54,13 @@ runs:
     - name: "Checking Terraform Format of Files"
       shell: bash
       run: |
-        cd infrastructure
+        cd ${{ inputs.terraform_base_dir }}
         terraform fmt -check $(find . -name '*tf')
 
     - name: "Validate Terraform Configs"
       shell: bash
       run: |
-        cd infrastructure
+        cd ${{ inputs.terraform_base_dir }}
         for d in $(find . -type d -mindepth 1 -maxdepth 1)
         do
           echo "Validating the $d config"
