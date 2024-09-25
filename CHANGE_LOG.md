@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/oaknational/oak-terraform-actions/compare/v1.0.0...v1.1.0) (2024-09-25)
+
+
+### Features
+
+* **terraform checks:** make base dir an input ([c2ab357](https://github.com/oaknational/oak-terraform-actions/commit/c2ab357e2ac15f29b71c677b6b99b8da8bd20158))
+
 # 1.0.0 (2024-09-02)
 
 
